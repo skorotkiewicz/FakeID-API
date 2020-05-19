@@ -6,12 +6,10 @@ const api = require("./routes/api");
 const website = require("./routes/website");
 const app = express();
 
-//swig.setDefaults({ loader: swig.loaders.fs(__dirname + '/templates' )});
-
 app.engine("html", swig.renderFile);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "html");
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(express.static(path.join(__dirname, "public"), { maxAge: 3600000 })); // 3600000msec == 1hour
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -26,8 +24,7 @@ app.use("/api", api);
 // handle errors
 app.use(function (err, req, res, next) {
   if (err.status === 500)
-    res.status(500).json({ message: "Something looks wrong" });
-  else res.status(500).json({ message: "Something looks wrong" });
+    return res.status(500).json({ message: "Something looks wrong" });
 });
 
 // throw 404 if URL not found

@@ -74,6 +74,3 @@ module.exports = {
     });
   },
 };
-
-//scrapeWebData("http://localhost/~modinfo/a.html");
-//scrapeWebData("https://www.fakenamegenerator.com/gen-male-pl-pl.php");
