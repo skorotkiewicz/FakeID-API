@@ -1,7 +1,6 @@
 {
   "name": "fakeid",
   "version": 2,
-  "builds": [{ "src": "index.js", "use": "@now/node-server" }],
+  "builds": [{ "src": "App.js", "use": "@now/node-server" }],
   "routes": [{ "src": "/(.*)", "dest": "/App.js" }]
 }
-
