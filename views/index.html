@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FakeID-API</title>
+</head>
+<body>
+    
+<h2>FakeID-API Documentation</h2>
+
+<p>
+
+    <ul>
+        <li>
+            <strong>[ Genrate random FakeID ]</strong> - <code>GET /api/random</code>
+        </li>
+        <li>
+            <strong>[ Generate FakeID ]</strong> - <code>GET /api/Gender/:gender/NameSet/:nameset/Country/:country</code>
+        </li>
+    </ul>
+    <ol>
+        <li>
+            :gender - <select id="g" name="g"><option value="random">Random</option><option value="female">Female</option><option value="male">Male</option></select>
+        </li>
+        <li>
+            :nameset - <select id="n" name="n"><option value="us">American</option><option value="ar">Arabic</option><option value="au">Australian</option><option value="br">Brazil</option><option value="celat">Chechen (Latin)</option><option value="ch">Chinese</option><option value="zhtw">Chinese (Traditional)</option><option value="hr">Croatian</option><option value="cs">Czech</option><option value="dk">Danish</option><option value="nl">Dutch</option><option value="en">England/Wales</option><option value="er">Eritrean</option><option value="fi">Finnish</option><option value="fr">French</option><option value="gr">German</option><option value="gl">Greenland</option><option value="sp">Hispanic</option><option value="hobbit">Hobbit</option><option value="hu">Hungarian</option><option value="is">Icelandic</option><option value="ig">Igbo</option><option value="it">Italian</option><option value="jpja">Japanese</option><option value="jp">Japanese (Anglicized)</option><option value="tlh">Klingon</option><option value="ninja">Ninja</option><option value="no">Norwegian</option><option value="fa">Persian</option><option value="pl" selected="selected">Polish</option><option value="ru">Russian</option><option value="rucyr">Russian (Cyrillic)</option><option value="gd">Scottish</option><option value="sl">Slovenian</option><option value="sw">Swedish</option><option value="th">Thai</option><option value="vn">Vietnamese</option></select>
+        </li>
+        <li>
+            :country - <select id="c" name="c"><option value="au">Australia</option><option value="as">Austria</option><option value="bg">Belgium</option><option value="br">Brazil</option><option value="ca">Canada</option><option value="cyen">Cyprus (Anglicized)</option><option value="cygk">Cyprus (Greek)</option><option value="cz">Czech Republic</option><option value="dk">Denmark</option><option value="ee">Estonia</option><option value="fi">Finland</option><option value="fr">France</option><option value="gr" selected="selected">Germany</option><option value="gl">Greenland</option><option value="hu">Hungary</option><option value="is">Iceland</option><option value="it">Italy</option><option value="nl">Netherlands</option><option value="nz">New Zealand</option><option value="no">Norway</option><option value="pl">Poland</option><option value="pt">Portugal</option><option value="sl">Slovenia</option><option value="za">South Africa</option><option value="sp">Spain</option><option value="sw">Sweden</option><option value="sz">Switzerland</option><option value="tn">Tunisia</option><option value="uk">United Kingdom</option><option value="us">United States</option><option value="uy">Uruguay</option></select>
+        </li>
+    </ol>
+</p>
+
+<p>
+    <strong>https://fakeid.now.sh/api/Gender/<span id="gender">:gender</span>/NameSet/<span id="nameset">:nameset</span>/Country/<span id="country">:country</span></strong>
+</p>
+
+<script>
+
+
+window.onload = function() {
+    document.getElementById('g').addEventListener('change', function() {
+        document.getElementById('gender').innerHTML = this.value;
+    });
+    document.getElementById('n').addEventListener('change', function() {
+        document.getElementById('nameset').innerHTML = this.value;
+    });
+    document.getElementById('c').addEventListener('change', function() {
+        document.getElementById('country').innerHTML = this.value;
+    });
+}
+
+</script>
+
+</body>
+</html>
